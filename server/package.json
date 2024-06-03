@@ -1,0 +1,53 @@
+{
+  "name": "web_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node ./src/index.js",
+    "auth_server": "node ./src/auth_server.js",
+    "watch_server": "nodemon ./src/index.js",
+    "watch_auth_server": "nodemon ./src/auth_server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run auth_server\"",
+    "build": "npx babel src config --out-dir build",
+    "prod_run": "node ./build/index.js",
+    "prod_auth_run": "node ./build/auth_server.js"
+  },
+  "engines": {
+    "node": "18.3.0"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "concurrently": "^7.2.1",
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.1",
+    "fs": "^0.0.1-security",
+    "http-proxy-middleware": "^2.0.6",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.5-lts.1",
+    "node-html-parser": "^6.1.1",
+    "nodemailer": "^6.7.5",
+    "nodemon": "^2.0.18",
+    "pg": "^8.7.3",
+    "phone": "^3.1.25",
+    "process": "^0.11.10",
+    "smsaero-api-v2": "^1.0.0",
+    "swagger-jsdoc": "^6.2.1",
+    "swagger-ui-express": "^4.4.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5"
+  }
+}

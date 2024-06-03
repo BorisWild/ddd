@@ -1,0 +1,588 @@
+.control-panels-bottom{
+	position: absolute;
+	left: 0; bottom: 0;
+	width: 100%;
+	transition: 0.1s;
+	transform: translateY(11.5rem);
+	z-index: 1;
+}
+.control-panels-bottom.active{
+	transform: translateY(0);
+}
+.control-panels-bottom .control-panels-bottom-btns{
+	background: rgba(0,0,0,0.5);
+	display: flex;
+	height: 3.25rem;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+.control-panels-bottom .control-panels-bottom-btns .control-panels-bottom-btns-group{
+	display: flex;
+}
+.control-panels-bottom .control-panels-bottom-btns .control-panels-bottom-btns-group.default{
+	width: 100%;
+}
+
+.control-panels-bottom .control-panels-bottom-btns  .control-panels-bottom-btns-group-filling.default{
+	border-left: 2px solid black;
+}
+
+.control-panels-bottom .control-panels-bottom-btns .control-panels-bottom-btns-group .drimo-btn-parent{
+	width: 100%;
+	justify-content: center;
+}
+
+.control-panels-bottom .control-panels-bottom-btns .control-panels-bottom-btns-group .control-panels-bottom-btns-group-childs{
+	display: none;
+	width: 100%;
+}
+.control-panels-bottom-btns-group-childs{
+	width: 100%;
+}
+
+.control-panels-bottom .control-panels-bottom-btns .control-panels-bottom-btns-group.active{
+	width: 100%;
+}
+.control-panels-bottom .control-panels-bottom-btns .control-panels-bottom-btns-group.active .drimo-btn-parent{
+	display: none;
+}
+
+.control-panels-bottom .control-panels-bottom-btns .control-panels-bottom-btns-group.active .control-panels-bottom-btns-group-childs{
+	display: flex;
+}
+.control-panels-bottom .control-panels-bottom-notification{
+	position: relative;
+	padding-bottom: 0.875rem;
+}
+.control-panels-bottom .control-panels-bottom-notification .container{
+	z-index: 2;
+	position: relative;
+}
+.control-panels-bottom .control-panels-bottom-notification:after{
+	z-index: 1;
+	position: absolute;
+	left: 0; bottom: 0;
+	width: 100%;
+	height: 10rem;
+	content: '';
+	background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.control-panels-bottom-windows-wrapper{
+	height: 11.5rem;
+	background: white;
+	position: relative;
+}
+
+.control-panels-bottom .control-panels-bottom-window{
+	/*display: none;*/
+	padding: 1.5rem 0;
+	transition: 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(100%);
+	z-index: 10;
+}
+
+.control-panels-bottom .control-panels-bottom-window.active{
+	transform: translateY(0);
+	opacity: 1;
+	visibility: visible;
+}
+
+.control-panels-bottom .close{
+	position: absolute;
+	top: 1.5rem;
+	right: 1.5rem;
+	height: 1.5rem;
+	width: 1.5rem;
+	cursor: pointer;
+	transition: 0.2s;
+	z-index: 11;
+}
+.control-panels-bottom .close:hover{
+	transform: scale(1.1);
+}
+
+.control-panels-ceil-list{
+	display: flex;
+}
+.control-panels-ceil-list .control-panels-ceil{
+	transition: 0.2s;
+	display: flex;
+	width: 7.5rem;
+	min-width: 7.5rem;
+	height: 7.5rem;
+	border: 2px solid #000000;
+	border-right: none;
+	flex-direction: column;
+	cursor: pointer;
+	overflow: hidden;
+	user-select: none;
+}
+
+.control-panels-ceil-list .control-panels-ceil .preview{
+	width: 100%;
+	height: 74%;
+	transition: 0.2s;
+}
+.control-panels-ceil-list .control-panels-ceil .preview img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.control-panels-ceil-list .control-panels-ceil .title{
+	padding: 0.5rem 0.75rem;
+	font-size: 1rem;
+	white-space: pre;
+	transform-origin: left;
+	transition: 0.1s;
+}
+.control-panels-ceil-list .control-panels-ceil:last-child{
+	border-right: 2px solid #000000;
+}
+
+.control-panels-ceil-list .control-panels-ceil:hover .preview{
+	transform: scale(1.05);
+}
+
+.control-panels-ceil-list .control-panels-ceil:hover .title{
+	white-space: normal;
+	transform: translateY(-0.75rem);
+}
+
+/*.control-panels-ceil-list .control-panels-ceil:hover .title{
+	transform: scaleX( 0.7 );
+}*/
+
+.control-panels-ceil.selected{
+	background-color: #E92627;
+	color: white;
+}
+
+.input-wrapper{
+	display: flex;
+	align-items: center;
+}
+.input-wrapper .label{
+	font-family: 'Helvetica', sans-serif !important;
+	font-size: 0.875rem;
+	margin-right: 1rem;
+	font-weight: 700;
+	margin-bottom: 0.25rem;
+	white-space: pre;
+	width: 8rem;
+}
+
+.input-wrapper .input-container{
+	display: flex;
+	align-items: center;
+	border: 1px solid #E4E4E4;
+}
+
+.input-wrapper .input-container input{
+	display: flex;
+	background: white;
+	padding: 0.6875rem 0.5rem;
+	font-size: 1.125rem;
+	font-family: 'Adderley', sans-serif !important;
+}
+.input-wrapper .input-container .decrease{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 0.6875rem 0.5rem;
+	cursor: pointer;
+}
+.input-wrapper .input-container .decrease svg{
+	width: 1rem;
+	height: 1rem;
+}
+.input-wrapper .input-container .increase{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 0.6875rem 0.5rem;
+	cursor: pointer;
+}
+.input-wrapper .input-container .increase svg{
+	width: 1rem;
+	height: 1rem;
+}
+
+.input-wrapper .input-container input{
+	border: none !important;
+	outline: none !important;
+	width: 100%;
+	text-align: center;
+}
+.input-wrapper .input-container.change-disabled{
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.input-wrapper .input-container.change-disabled .decrease{
+	opacity: 0;
+}
+.input-wrapper .input-container.change-disabled .increase{
+	opacity: 0;
+}
+
+.input-wrapper .input-container.input-container-blocked input{
+	pointer-events: none;
+}
+
+.control-panels-bottom .drimo-btn.active{
+	background: white;
+	color: black;
+}
+.control-panels-bottom .drimo-btn{
+	position: relative;
+}
+.control-panels-bottom .drimo-btn:after{
+	content: '';
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: white;
+	opacity: 0;
+	transition: 0.2s;
+}
+
+.control-panels-bottom .drimo-btn.active:after{
+	opacity: 1;
+}
+
+.control-panels-bottom .drimo-btn svg path, .control-panels-bottom .drimo-btn svg circle{
+	transition: 0.2s;
+}
+
+.control-panels-bottom .drimo-btn.active svg path, .control-panels-bottom .drimo-btn.active svg circle{
+	stroke: #E92627;
+}
+
+.textures-preview-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	/*margin: -0.125rem;*/
+}
+
+.textures-preview-wrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.textures-preview-wrapper::-webkit-scrollbar-thumb {
+  /*border-radius: 2px;*/
+  background-color: #D0D0D0;
+}
+
+/*.textures-preview-wrapper::-webkit-scrollbar-track {
+  border-radius: 2px;
+}*/
+
+
+.textures-preview-wrapper .item{
+
+	transition: 0.1s;
+
+	border: 2px solid white;
+
+	width: 2.5rem;
+	height: 2.5rem;
+	min-width: 2.5rem;
+	background: lightgray;
+	/*margin: 0.125rem;*/
+	cursor: pointer;
+	position: relative;
+
+	z-index: 1;
+}
+
+.textures-preview-wrapper.small .item{
+	width: 2rem;
+	height: 2rem;
+	min-width: 2rem;
+}
+
+.textures-preview-wrapper .item .item-wrapper{
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	border: 2px solid white;
+}
+
+.textures-preview-wrapper .item:hover{
+	border: 2px solid #000000;
+}
+
+.textures-preview-wrapper .item img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.prompt-hover:hover .prompt{
+
+	opacity: 1;
+	visibility: visible;
+
+}
+
+.prompt{
+
+	pointer-events: none;
+
+	transition: 0.1s;
+
+	opacity: 0;
+	visibility: hidden;
+
+	font-family: 'Helvetica', sans-serif !important;
+	position: absolute;
+	display: inline-flex;
+	padding: 0.275rem 0.8125rem 0.475rem;
+	background: #191919;
+	color: white;
+
+	font-weight: 400;
+	font-size: 0.75rem;
+
+	white-space: pre;
+  top: -0.6rem;
+  left: 50%;
+  transform: translate(-50%, -100%);
+
+  z-index: 2;
+
+}
+
+.prompt:after{
+	content: '';
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  transform: rotate(45deg) translate(-50%, 25%);
+  bottom: -0.4375rem;
+  left: 50%;
+  z-index: -1;
+  background: #191919;
+}
+
+
+.control-panels-bottom-char img{
+	width: 1rem;
+	height: 1rem;
+	min-width: 1rem;
+	margin-right: 0.5rem;
+}
+.control-panels-bottom-char div{
+	font-family: 'Helvetica', sans-serif !important;
+	font-size: 0.875rem;
+}
+
+.text-help{
+	user-select: none;
+}
+
+.ARbottom{
+	position: absolute;
+  right: 1.5rem;
+  top: -1.125rem;
+  background: white;
+ 	z-index: 3;
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  border-radius: 50rem;
+  transition: 0.2s;
+}
+.ARbottom svg{
+	cursor: pointer;
+  pointer-events: auto;
+}
+.ARbottom span{
+	font-family: 'Helvetica', sans-serif !important;
+	font-size: 0.75rem;
+	margin-left: 0.3rem;
+	font-weight: 700;
+	cursor: pointer;
+  pointer-events: auto;
+}
+
+.ARbottom:hover{
+	transform: scale(1.1);
+}
+
+.control-panels-bottom.active .ARbottom{
+	top: -2.5rem;
+}
+
+.TotalName{
+	cursor: pointer;
+}
+
+.ChangeTotalName{
+	width: 1.25rem;
+	height: 1.25rem;
+	cursor: pointer;
+}
+.ChangeTotalName svg{
+	width: 100%;
+	height: 100%;
+}
+
+.ChangeTotalName svg path{
+	transition: 0.1s;
+}
+
+.TotalName:hover .ChangeTotalName svg path{
+	fill: black;
+}
+
+
+.switcher {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 40px;
+  height: 24px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+label.switcher:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.2s;
+}
+
+.switcher.checked label.switcher {
+  background: #E92627;
+}
+
+.switcher.checked label.switcher:after {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+.DivisionBtn{
+	position: relative;
+}
+
+.DivisionPopup{
+	position: absolute;
+	top: 0;
+	left: 4px;
+	min-width: 96px;
+	height: auto;
+	background: white;
+	padding: 16px;
+	border: 2px solid #000000;
+	transform: translateY(-100%);
+	z-index: 100;
+}
+
+.DivisionPopup .BtnApply{
+	color: #E92627;
+	font-size: 12px;
+	line-height: 14px;
+	font-family: 'Helvetica', sans-serif !important;
+	font-style: normal;
+	font-weight: 700;
+	cursor: pointer;
+}
+.DivisionPopup .BtnReset{
+	color: #000000;
+	font-size: 12px;
+	line-height: 14px;
+	font-family: 'Helvetica', sans-serif !important;
+	font-style: normal;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.DivisionPopup .BtnNewCell{
+	color: #0070C4;
+	font-size: 12px;
+	line-height: 14px;
+	font-family: 'Helvetica', sans-serif !important;
+	font-style: normal;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.DivisionPopup .BtnNewCell.disabled{
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.DivisionPopup .input-container{
+	width: 60%;
+}
+
+.DivisionGrid{
+	display: flex;
+	flex-wrap: wrap;
+	margin: -1px;
+	margin-bottom: 12px;
+}
+
+.DivisionGrid.x1{
+	width: 18px;
+}
+.DivisionGrid.x2{
+	width: 36px;
+}
+.DivisionGrid.x3{
+	width: 54px;
+}
+.DivisionGrid.x4{
+	width: 72px;
+}
+
+
+.Tile{
+	width: 16px;
+	height: 16px;
+	margin: 1px;
+	background: #E4E4E4;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+.Tile:hover{
+	background: #c6c6c6;
+}
+
+.Tile.disabled{
+	background: #f2f2f2;
+	pointer-events: none;
+}
+
+.Tile.active{
+	background: #525252;
+}
+
+.Tile.active:hover{
+	background: #3e3e3e;
+}

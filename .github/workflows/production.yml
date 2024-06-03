@@ -1,0 +1,17 @@
+name: Production
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: [self-hosted, linux, x64, vm2212070789]
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+      - name: Rebuild and run an image
+        run: |
+          docker-compose down client_prod server
+          docker system prune -af
+          docker-compose up -d --build client_prod server

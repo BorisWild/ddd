@@ -1,0 +1,48 @@
+.notifications{
+	z-index: 100;
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	display: block;
+	width: 22rem;
+	background: rgba(82, 82, 82, 0.8);
+	backdrop-filter: blur(4px);
+	padding: 1.25rem 2rem 1.25rem 1.5rem;
+	color: white;
+	transition: 0.3s;
+	transform: translateY(175%);
+}
+
+.notifications.show {
+	transform: translateY(0%);
+}
+
+.notifications .notifications_header{
+	font-family: 'Adderley', sans-serif !important;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1.25rem;
+	margin-bottom: 0.5rem;
+}
+
+.notifications .notifications_des{
+	font-family: 'Helvetica', sans-serif !important;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 0.875rem;
+	color: #C4C4C4;
+}
+
+.notifications .notifications_close_btn{
+	position: absolute;
+	bottom: 2.5rem;
+	top: 1.25rem;
+	right: 1.5rem;
+	opacity: 0.4;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+.notifications .notifications_close_btn:hover{
+	opacity: 1;
+}

@@ -1,0 +1,71 @@
+version: "3.7"
+services:
+  pgsql:
+    image: postgres:14.5
+    command:
+      - "postgres"
+      - "-c"
+      - "idle_in_transaction_session_timeout=10000"
+      - "-c"
+      - "logging_collector=on"
+    hostname: pgsql
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_PASSWORD=fsdewc32sdca32"
+      - "POSTGRES_USER=root"
+      - "POSTGRES_DB=drimo"
+      - "TZ=GMT+3"
+    volumes:
+      - /persistent_volume:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U root -d drimo"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 70G
+  server:
+    build:
+      context: ./server/
+      dockerfile: Dockerfile
+    image: obrol/drimo_server:v1
+    restart: always
+    ports:
+      - 4321:4321
+      - 5000:5000
+    volumes:
+      - /files:/root/files
+    links:
+      - pgsql
+    depends_on:
+      - pgsql
+  client_prod:
+    build:
+      context: ./client/
+      dockerfile: Dockerfile
+    image: obrol/drimo_client:v1
+    restart: always
+    environment:
+      - BUILDVAR=PRODUCTION
+    ports:
+      - 3006:3006
+    depends_on:
+      - pgsql
+  client_test:
+    build:
+      context: ./client/
+      dockerfile: Dockerfile
+    image: obrol/drimo_client:v1
+    restart: always
+    environment:
+      - BUILDVAR=TEST
+    ports:
+      - 3006:3006
+    depends_on:
+      - pgsql

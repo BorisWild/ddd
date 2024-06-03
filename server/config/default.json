@@ -1,0 +1,60 @@
+{
+    "database": {
+        "user": "root",
+        "password": "fsdewc32sdca32",
+        "db_port": 5432,
+        "db_host": "pgsql",
+        "db_name": "drimo"
+    },
+    
+    "app_http_port": 4321,
+    "role": {
+        "admin": 1,
+        "manager": 2,
+        "user": 3
+    },
+    "sms_aero": {
+        "email": "v.karpenko@yurin.biz",
+        "password": "HcM0IzUPk0XVLlfGogHVy5qBHc0"
+    },
+    "send_email": {
+        "email": "yurin.develop@yandex.ru",
+        "password": "N5pdPeijpMt"
+    },
+    "auth": {
+        "access_token_secret": "a00dfb4484a5be021423b1bb9bf423ebdca1830fcf8be085873e3f52be2af6a59c18c8697ca8374dd10b38350ec524b6067e1a9464d8db42055bec47df573d39",
+        "refresh_token_secret": "0e8a27603b7303fe949990e413e2b71fd35109bd7c8f8018e2718590b3bea63a6c9274157ff579a22b4edf501afa7d049e7afce405a0550a63b8a3b9dc64e92d",
+        "verification_phone_secret": "secret phone verification token",
+        "verification_email_secret": "secret email verification token",
+        "verification_password_secret": "secret password verification token",
+        "auth_server_url": "http://localhost:5000/",
+        "http_auth_port": 5000
+    },
+    "texture": {
+        "default_file_path": "src/files/texture/images/default.png",
+        "query_image_dir": "src/files/texture/images/",
+        "dir_path": "files/texture"
+    },
+    "element": {
+        "default_file_path": "src/files/element/files/default.txt",
+        "query_file_dir": "src/files/element/files/",
+        "dir_path": "files/element"
+    },
+    "solution": {
+        "default_image_file_path": "src/files/solution/images/default.png",
+        "default_json_file_path": "src/files/solution/files/default.txt",
+        "query_image_dir": "src/files/solution/images/",
+        "query_file_dir": "src/files/solution/files/",
+        "query_ar_file_dir": "src/files/solution/ar_files/",
+        "dir_path": "files/solution"
+    },
+    "subcategory": {
+        "default_file_path": "src/files/subcategory/videos/default.mp4",
+        "query_file_dir": "src/files/subcategory/videos/",
+        "dir_path": "files/subcategory"
+    },
+    "dellin": {
+        "api_key": "A41075D2-769D-4F9C-8198-86868BE74794",
+        "pick_up_address": "NULL"
+    }
+}
