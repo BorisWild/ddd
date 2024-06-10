@@ -10,7 +10,7 @@ const defDistZ = 0; //1
 
 export const baseURL = homeURL+'/';
 export const backBaseURL = 'https://api.drimo.dev-2-tech.ru/';
-export const backBaseURL5000 = 'https://api.drimo.dev-2-tech.ru/';
+export const backBaseURL5000 = 'https://auth.drimo.dev-2-tech.ru';
 
 export const config = {
 	PI : PI,
