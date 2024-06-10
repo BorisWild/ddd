@@ -1,3 +1,3 @@
-const homeURL = 'https://drimo-design.com';
+const homeURL = 'https://drimo.dev-2-tech.ru';
 
 export default homeURL;

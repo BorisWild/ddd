@@ -9,8 +9,8 @@ const defDistY = 0; //3.55 //1
 const defDistZ = 0; //1
 
 export const baseURL = homeURL+'/';
-export const backBaseURL = homeURL+'/';
-export const backBaseURL5000 = homeURL+'/';
+export const backBaseURL = 'https://api.drimo.dev-2-tech.ru/';
+export const backBaseURL5000 = 'https://api.drimo.dev-2-tech.ru/';
 
 export const config = {
 	PI : PI,

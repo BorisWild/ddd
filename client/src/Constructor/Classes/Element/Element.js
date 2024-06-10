@@ -191,12 +191,16 @@ export default class Element {
       }else{
 
         let typeForFind = 'profile'; 
+ 
 
         if ( _type === 'panel' || _type === 'box' || _type === 'door' ){
           typeForFind = 'panel'; 
         }
 
-        const textureObj = _texturesState.find( (t) => t.type === typeForFind );
+        //const textureObj = _texturesState.find( (t) => t.type === typeForFind );
+        //need more textures
+        
+        const textureObj = _texturesState.find( (t) => t.type === 'door' );
 
         try {
           this.setElementToTextureID( item.textures.find( (item) => item.texture_id === textureObj.id ).elements2texturesID );

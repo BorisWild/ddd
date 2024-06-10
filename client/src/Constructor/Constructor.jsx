@@ -4198,9 +4198,11 @@ function Constructor() {
         }
 
         if ( texture.status ){
+        //console.log(texture.type,bundleNames);
           return {
             id : texture.id,
-            type : bundleNames[ texture.type ].little,
+            type : bundleNames[ 'Дверная панель' ]?.little,
+            //type : bundleNames[ texture.type ].little,
             name : texture.title,
             file : backBaseURL + srcJSON,
           }
